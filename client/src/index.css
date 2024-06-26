@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.jobhunter::before {
+    content: 'Jobhunter';
+    color: white;
+    font-family: 'Russo One', sans-serif;
+    font-weight: bolder;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-top: 0.5rem;
+    position: absolute;
+    left: 4rem;
+    top: 0;
+    transition: all 0.25s ease-in-out;
+}
+nav:hover .jobhunter::before {
+    margin-top: 0;
+}
+
+.jobhunter::after {
+    content: 'alláskeresés';
+    color: rgba(255, 255, 255, 0.5);
+    font-size: medium;
+    font-weight: bold;
+    opacity: 0;
+    position: absolute;
+    top: 1.5rem;
+    left: 0;
+    transition: all 0.25s ease-in-out;
+}
+nav:hover .jobhunter::after {
+    opacity: 1;
+    left: 4rem;
+}
+
+.jobhunter img {
+    transition: all 0.25s ease-in-out;
+}
+nav:hover .jobhunter img {
+    rotate: 30deg;
+    scale: 1.1;
+}
+
+.divider {
+    margin: 0;
+    margin-top: 0.4rem;
+    display: block;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.7rem;
+    font-weight: lighter;
+    line-height: 100%;
+    text-align: center;
+    width: 2rem;
+}
+
+
+.zebra tbody tr:nth-child(odd) {
+    background-color: rgb(243 244 246 / 1);
+}
+
+.hamburger {
+    display: none;
+}
+
+
+@media (max-width: 1000px) {
+    .nav-items {
+        display: block;
+        position: absolute;
+        top: 5rem;
+        right: 1rem;
+        margin: 0;
+        width: fit-content;
+        z-index: 20;
+        background-color: var(--fallback-n, oklch(var(--n) / 1));
+    }
+    .hide-items {
+        display: none;
+    }
+
+    .nav-items > * {
+        padding: 1rem;
+    }
+    .nav-items a {
+        font-size: 1.2rem;
+    }
+
+    .divider, .divider2 {
+        display: none;
+    }
+
+    .hamburger {
+        display: initial;
+    }
+
+    .collapsible {
+        display: none;
+    }
+
+    .wrapflex {
+        flex-direction: column;
+        justify-content: center;
+        align-items: start;
+        margin-right: min(10rem, 10%);
+    }
+
+    .wrapgrid {
+        grid-template-columns: 1fr;
+    }
+    .wrapgrid > * {
+        grid-column: 1;
+        grid-row: auto;
+        margin-left: 0;
+    }
+    .wrapgrid textarea {
+        height: 20rem;
+    }
+}
